@@ -1,0 +1,110 @@
+/* Main content container with video background */
+.main-content {
+  position: relative;
+  min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Video background styling */
+.video-background {
+  position: fixed; /* Changed from absolute to fixed for better coverage */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Content container */
+.content-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  z-index: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base text styling for all pages */
+.page {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
+  width: 25vw;
+}
+
+.page h1, 
+.page h2, 
+.page h3 {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.page h1 {
+  font-size: 2.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.page p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Links styling */
+.back-link,
+.feature-link {
+  color: #4fc3f7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.back-link:hover,
+.feature-link:hover {
+  color: #b3e5fc;
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 1rem;
+  }
+  
+  .page {
+    padding: 1.5rem;
+  }
+  
+  .page h1 {
+    font-size: 2rem;
+  }
+}
